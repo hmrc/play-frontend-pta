@@ -1,0 +1,1 @@
+GET  /assets/*file        uk.gov.hmrc.ptafrontend.controllers.Assets.at(path="/assets", file)
