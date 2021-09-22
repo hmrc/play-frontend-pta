@@ -16,13 +16,13 @@ lazy val root = Project(libName, file("."))
     libraryDependencies ++= LibDependencies(),
     TwirlKeys.templateImports := templateImports,
     npmTest := {
-      val exitCode = ("npm install" #&& "npm test").!
+      val exitCode = ("npm ci" #&& "npm test").!
       if (exitCode != 0) {
         throw new MessageOnlyException("npm install and test failed")
       }
     },
     npmBuild := {
-      val exitCode = ("npm install" #&& "npm run build").!
+      val exitCode = ("npm ci" #&& "npm run build").!
       if (exitCode != 0) {
         throw new MessageOnlyException("npm install and build failed")
       }
