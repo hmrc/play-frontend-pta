@@ -21,7 +21,7 @@
 @(params: AttorneyBanner)(implicit messages: Messages)
 @import params._
 <div class="govuk-width-container">
-    <div class="pta-attorney-banner @classes" data-module="pta-attorney-banner">
+    <div class="pta-attorney-banner @classes" data-module="pta-attorney-banner" id="attorneyBanner">
         <div class="pta-attorney-banner__text">
             @Html(Messages("attorney.banner.using.service.for", HtmlFormat.escape(name)))
         </div>
