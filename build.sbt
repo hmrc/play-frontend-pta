@@ -2,6 +2,7 @@ import scala.sys.process._
 import play.sbt.PlayImport.PlayKeys._
 
 val libName         = "play-frontend-pta"
+
 val npmBuild        = taskKey[Unit]("npm-build")
 val npmTest         = taskKey[Unit]("npm-test")
 
@@ -30,7 +31,7 @@ lazy val root = Project(libName, file("."))
     Test / test := (Test / test).dependsOn(npmBuild).value,
     isPublicArtefact := true,
     sbt.Test / parallelExecution := false,
-    playMonitoredFiles ++= (Compile / sourceDirectories).value,
+    playMonitoredFiles ++= (Compile / TwirlKeys.compileTemplates / sourceDirectories).value,
     scalacOptions ++= Seq(
       "-Werror",
       "-Wconf:cat=unused-imports&site=.*views\\.html.*:s",
