@@ -12,7 +12,7 @@ lazy val root = Project(libName, file("."))
   .settings(
     name := libName,
     majorVersion := 0,
-    scalaVersion := "2.13.8",
+    scalaVersion := "2.13.10",
     libraryDependencies ++= LibDependencies(),
     TwirlKeys.templateImports := templateImports,
     npmTest := {
@@ -34,7 +34,6 @@ lazy val root = Project(libName, file("."))
     sbt.Test / parallelExecution := false,
     playMonitoredFiles ++= (Compile / TwirlKeys.compileTemplates / sourceDirectories).value,
     scalacOptions ++= Seq(
-      "-Werror",
       "-Wconf:cat=unused-imports&site=.*views\\.html.*:s",
       "-Wconf:cat=unused-imports&site=<empty>:s",
       "-Wconf:cat=unused&src=.*Routes\\.scala:s"
