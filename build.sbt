@@ -35,7 +35,6 @@ lazy val root = Project(libName, file("."))
     playMonitoredFiles ++= (Compile / TwirlKeys.compileTemplates / sourceDirectories).value,
     scalacOptions ++= Seq(
       "-Wconf:cat=unused-imports&site=.*views\\.html.*:s",
-      "-Wconf:cat=unused-imports&site=<empty>:s",
       "-Wconf:cat=unused&src=.*Routes\\.scala:s"
     )
   )
