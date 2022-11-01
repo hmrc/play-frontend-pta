@@ -1,10 +1,10 @@
 import scala.sys.process._
 import play.sbt.PlayImport.PlayKeys._
 
-val libName         = "play-frontend-pta"
+val libName = "play-frontend-pta"
 
-val npmBuild        = taskKey[Unit]("npm-build")
-val npmTest         = taskKey[Unit]("npm-test")
+val npmBuild = taskKey[Unit]("npm-build")
+val npmTest  = taskKey[Unit]("npm-test")
 
 lazy val root = Project(libName, file("."))
   .enablePlugins(PlayScala, SbtTwirl)
