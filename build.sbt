@@ -30,6 +30,7 @@ lazy val root = Project(libName, file("."))
     Compile / packageBin := (Compile / packageBin).dependsOn(npmBuild).value,
     Test / test := (Test / test).dependsOn(npmBuild).value,
     isPublicArtefact := true,
+    scalafmtOnCompile := true,
     sbt.Test / parallelExecution := false,
     playMonitoredFiles ++= (Compile / TwirlKeys.compileTemplates / sourceDirectories).value,
     scalacOptions ++= Seq(
